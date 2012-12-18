@@ -1,15 +1,16 @@
 zh-CN:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: 咨询
         description: 提供一个联系表单与保存咨询
     inquiries:
       inquiries:
-        new:
+        form:
           send: 发送消息
           privacy_policy: 我们珍视您的隐私
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: 永久删除此咨询
           inquiry:
@@ -17,12 +18,12 @@ zh-CN:
             said: 说
             mark_as_spam: 标记为垃圾邮件
             mark_as_ham: 移到收件箱
-          submenu:
+          actions:
             inbox: 收件箱
             spam: 垃圾邮件
             update_notified: 更新通知名单
             edit_confirmation_email: 编辑确认email
-          index:
+          records:
             no_inquiries: 你还没有收到任何的咨询.
             no_spam: 垃圾邮件箱为空.
           show:
@@ -44,7 +45,7 @@ zh-CN:
             inquiry_settings_value_name: 发送通知到
             hint: 当收到新的咨询时，Refinery将会发一封email通知你.
             example: "输入你的email地址如: jack@work.com, jill@office.com"
-          confirmation_email_form:
+          confirmation_email:
             to: 到
             from: 从
             subject: 标题

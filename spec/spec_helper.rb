@@ -1,9 +1,9 @@
 require 'rubygems'
 
 # Configure Rails Environment
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test'
 
-require File.expand_path("../dummy/config/environment", __FILE__)
+require File.expand_path('../dummy/config/environment', __FILE__)
 
 require 'rspec/rails'
 require 'capybara/rspec'
@@ -17,6 +17,9 @@ RSpec.configure do |config|
   config.filter_run :focus => true
   config.run_all_when_everything_filtered = true
 end
+
+# set javascript driver for capybara
+Capybara.javascript_driver = :selenium
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories including factories.

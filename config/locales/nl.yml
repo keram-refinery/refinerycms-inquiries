@@ -1,15 +1,16 @@
 nl:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Contactaanvragen
         description: Contactformulier en beheer van vragen
     inquiries:
       inquiries:
-        new:
+        form:
           send: Verstuur uw vraag
           privacy_policy: Wij respecteren uw privacy
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Verwijder deze vraag voorgoed
           inquiry:
@@ -17,12 +18,12 @@ nl:
             said: zei
             mark_as_spam: Markeer als spam
             mark_as_ham: Verplaats naar de inbox
-          submenu:
+          actions:
             inbox: Inbox
             spam: Spam
             update_notified: Wijzig wie op de hoogte wordt gesteld van vragen
             edit_confirmation_email: Bewerk bevestigings-e-mail
-          index:
+          records:
             no_inquiries: Je hebt nog geen vragen ontvangen.
             no_spam: Hoera! Je hebt geen spam.
           show:
@@ -44,7 +45,7 @@ nl:
             inquiry_settings_value_name: Stuur notificaties naar
             hint: "Wilt u naar meerdere adressen notificaties sturen? Vul dan meerdere e-mailadressen in gescheiden door komma's"
             example: "Bijvoorbeeld: ik@domein.com, vrienden@msn.com, collegas@werk.com"
-          confirmation_email_form:
+          confirmation_email:
             to: Aan
             from: Van
             subject: Onderwerp

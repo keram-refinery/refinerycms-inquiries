@@ -1,10 +1,13 @@
 require 'refinery/core/base_model'
 require 'filters_spam'
-require 'acts_as_indexed'
 
 module Refinery
   module Inquiries
     class Inquiry < Refinery::Core::BaseModel
+
+      scope :desc, -> { order(id: :desc) }
+      scope :fresh, -> { where(archived: false) }
+      scope :archived, -> { where(archived: true) }
 
       filters_spam :message_field => :message,
                    :email_field => :email,
@@ -13,14 +16,8 @@ module Refinery
                    :extra_spam_words => %w()
 
       validates :name, :presence => true
-      validates :email, :format=> { :with =>  /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+      validates :email, :format=> { :with =>  /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
       validates :message, :presence => true
-
-      acts_as_indexed :fields => [:name, :email, :message, :phone]
-
-      default_scope :order => 'created_at DESC'
-
-      attr_accessible :name, :phone, :message, :email
 
       def self.latest(number = 7, include_spam = false)
         include_spam ? limit(number) : ham.limit(number)

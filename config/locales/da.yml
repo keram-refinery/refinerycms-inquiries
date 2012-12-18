@@ -1,16 +1,17 @@
 da:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Henvendelser
     inquiries:
       inquiries:
-        new:
+        form:
           header_message: "Der er et mindre problem"
           message: "Følgende skal rettes:"
           send: Send besked
           privacy_policy: "Vi værner om dine personlige oplysninger"
-      admin:
+    admin:
+      inquiries:
         inquiries:
           inquiry:
             move_inquiry_to_closed: Flyt til lukkede henvendelser
@@ -21,7 +22,7 @@ da:
           toggle_status:
             closed: "Henvendelsen '%{inquiry}' er lukket"
             reopened: "Henvendelsen '%{inquiry}' er genåbnet"
-          index:
+          records:
             search_results_for: "Søgeresultat for '%{query}'"
             no_inquiries: Du har endnu ikke modtaget nogen henvendelser.
           show:
@@ -34,7 +35,7 @@ da:
             actions: Handlinger
             back_to_all_inquiries: Tilbage til alle henvendelser
             inquiry: Henvendelse
-          submenu:
+          actions:
             update_notified: Opdatér, hvem der får besked
             edit_confirmation_email: Redigér e-mailbekræftelse
         settings:
@@ -45,7 +46,7 @@ da:
             explanation: "Hver gang kontaktformularen benyttes, sender Refinery en e-mail med besked om, at der er modtaget en ny henvendelse"
             hint: "Indtast en e-mail-adresse ovenfor. Skal beskeden sendes til mere end en person, så indtast flere adresser adskilt med kommaer."
             example: "Fx mig@domæne.dk, ven@hotmail.com, kollega@arbejde.dk"
-          confirmation_email_form:
+          confirmation_email:
             to: Til
             from: Fra
             subject: Emne

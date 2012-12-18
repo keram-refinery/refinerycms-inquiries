@@ -11,7 +11,7 @@ module Refinery
 
         clear_emails
 
-        visit refinery.inquiries_new_inquiry_path
+        visit "/contact"
 
         fill_in "Name", :with => "Ugis Ozols"
         fill_in "Email", :with => "ugis.ozols@refinerycms.com"
@@ -19,7 +19,7 @@ module Refinery
         click_button "Send message"
       end
 
-      it "sends confirmation email" do
+      it "sends confirmation email", :js do
         open_email("ugis.ozols@refinerycms.com")
 
         current_email.from.should eq(["no-reply@example.com"])

@@ -1,15 +1,16 @@
 bg:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Запитвания
         description: Осигурява форма за контакт и съхранение на запитвания
     inquiries:
       inquiries:
-        new:
+        form:
           send: Изпращане на съобщение
           privacy_policy: Високо ценим Вашите лични данни
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Изтриване на това запитване завинаги
           inquiry:
@@ -17,12 +18,12 @@ bg:
             said: написа
             mark_as_spam: Отбелязване като спам
             mark_as_ham: 'Преместване във "Входящи"'
-          submenu:
+          actions:
             inbox: Входящи
             spam: Спам
             update_notified: Получатели на уведомления
             edit_confirmation_email: Е-поща за потвърждение
-          index:
+          records:
             no_inquiries: Все още не сте получи запитвания.
             no_spam: Поздравления! Нямате никакъв спам.
           show:
@@ -44,7 +45,7 @@ bg:
           inquiry_settings_value_name: Изпращане на уведомления до
           hint: При получаване на ново запитване, Refinery, ще Ви уведоми по е-пощата.
           example: "Въведете адреса(или няколко) на Вашата е-поща. Например: jack@work.com, jill@office.com"
-        confirmation_email_form:
+        confirmation_email:
           to: От
           from: До
           subject: Тема

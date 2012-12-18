@@ -1,0 +1,31 @@
+<ul>
+  <li <%= 'class="selected"'.html_safe if action_name == 'index' %>>
+    <%= link_to refinery.admin_inquiries_inquiries_path,
+                :class => 'icon-small icon-with-text email-icon' do %>
+      <%= t('.inbox') -%> <i id="fresh_count"><%= "(#{fresh_count})" if fresh_count > 0 -%></i>
+    <% end -%>
+  </li>
+  <li <%= 'class="selected"'.html_safe if action_name == 'archived' %>>
+    <%= link_to refinery.archived_admin_inquiries_inquiries_path,
+                :class => 'icon-small icon-with-text archived-icon' do %>
+      <%= t('.archived') -%> <i id="archived_count"><%= "(#{archived_count})" if archived_count > 0 -%></i>
+    <% end -%>
+  </li>
+  <li <%= 'class="selected"'.html_safe if action_name == 'spam' %>>
+      <%= link_to refinery.spam_admin_inquiries_inquiries_path,
+                :class => "icon-small icon-with-text " +
+                          "spam#{'-empty' if params[:action] != 'spam'}-icon" do %>
+        <%= t('.spam') -%> <i id="spam_count"><%= "(#{spam_count})" if spam_count > 0 -%></i>
+      <% end %>
+  </li>
+  <li>
+    <%= link_to t('.update_notified'),
+                refinery.edit_admin_inquiries_setting_path(:inquiry_notification_recipients),
+                :class => 'icon-small icon-with-text setting-edit-icon' %>
+  </li>
+  <li>
+    <%= link_to t('.edit_confirmation_email'),
+                refinery.confirmation_email_admin_inquiries_settings_path,
+                :class => 'icon-small icon-with-text setting-edit-icon' %>
+  </li>
+</ul>

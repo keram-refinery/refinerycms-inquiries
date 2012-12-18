@@ -1,15 +1,16 @@
 en-GB:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Enquiries
         description: Provides a contact form and stores enquiries
     inquiries:
       inquiries:
-        new:
+        form:
           send: Send message
           privacy_policy: We value your privacy
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Remove this enquiry forever
           inquiry:
@@ -17,12 +18,12 @@ en-GB:
             said: said
             mark_as_spam: Mark as spam
             mark_as_ham: Move to inbox
-          submenu:
+          actions:
             inbox: Inbox
             spam: Spam
             update_notified: Update who gets notified
             edit_confirmation_email: Edit confirmation email
-          index:
+          records:
             no_inquiries: You have not received any enquiries yet.
             no_spam: Hooray! You don't have any spam.
           show:
@@ -44,7 +45,7 @@ en-GB:
             inquiry_settings_value_name: Send notifications to
             hint: When a new enquiry is submitted, Refinery will send an email notification to you.
             example: "Enter your email address(es) like: jack@work.com, jill@office.com"
-          confirmation_email_form:
+          confirmation_email:
             to: To
             from: From
             subject: Subject

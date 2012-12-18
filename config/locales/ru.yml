@@ -1,15 +1,16 @@
 ru:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Запросы
         description: Предоставляет форму обратной связи и хранит запросы
     inquiries:
       inquiries:
-        new:
+        form:
           send: Отправить сообщение
           privacy_policy: Мы относимся с уважением к вашим личным данным
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Удалить этот запрос навсегда
           inquiry:
@@ -17,12 +18,12 @@ ru:
             said: пишет
             mark_as_spam: Пометить как спам
             mark_as_ham: Переместить во входящие
-          submenu:
+          actions:
             inbox: Входящие
             spam: Спам
             update_notified: Изменить получателей уведомлений
             edit_confirmation_email: Редактировать письмо-подтверждение
-          index:
+          records:
             no_inquiries: "Вы еще не получили ни одного запроса."
             no_spam: "Ура, спама нет!"
           show:
@@ -44,7 +45,7 @@ ru:
             inquiry_settings_value_name: Отправлять уведомления
             hint: "Когда поступит новый запрос, Refinery CMS отправит вам уведомление на электронную почту."
             example: "Введите один или несколько адресов электронной почты через запятую: anna@mail.ru, ivanov@yandex.ru"
-          confirmation_email_form:
+          confirmation_email:
             to: Кому
             from: От
             subject: Тема сообщения

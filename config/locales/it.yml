@@ -1,17 +1,18 @@
 it:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Richieste
         description: Fornisce un modulo di contatto e memorizza le richieste
     inquiries:
       inquiries:
-        new:
+        form:
           header_message: si è verificato un problema
           message: "I seguenti problemi devono essere corretti:"
           send: Invia messaggio
           privacy_policy: "Noi diamo valore alla tua privacy"
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Rimuovi per sempre questa richiesta
           inquiry:
@@ -19,12 +20,12 @@ it:
             said: dice
             mark_as_spam: Segnala come spam
             mark_as_ham: Sposta nella inbox
-          submenu:
+          actions:
             inbox: Inbox
             spam: Spam
             update_notified: Aggiorna i destinatari della notifica
             edit_confirmation_email: Modifica la mail di conferma
-          index:
+          records:
             no_inquiries: Non hai ancora ricevuto alcuna richiesta.
             no_spam: Evviva! Non hai alcuno spam
           show:
@@ -46,7 +47,7 @@ it:
             inquiry_settings_value_name: Inviare notifiche a
             hint: Quando una nuova richiesta viene inviata, Refinery ti invierà una email di notifica.
             example: "Inserisci i tuoi indirizzi email come: jack@work.com, jill@office.com"
-          confirmation_email_form:
+          confirmation_email:
             to: Da
             from: A
             subject: Oggetto

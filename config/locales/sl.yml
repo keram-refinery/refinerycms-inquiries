@@ -1,15 +1,16 @@
 sl:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Povpraševanja
         description: Priskrbi kontaktni obrazec in shrani povpraševanja
     inquiries:
       inquiries:
-        new:
+        form:
           send: Pošlji sporočilo
           privacy_policy: "Cenimo vašo zasebnost"
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Odstrani povpraševanje
           inquiry:
@@ -17,10 +18,10 @@ sl:
             said: pravi
             mark_as_spam: Označi kot nezaželjeno
             mark_as_ham: Premakni v prejeto
-          index:
+          records:
             no_inquiries: Trenutno še ni nobenega povpraševanja.
             no_spam: Huura! Nimate nezaželjene pošte.
-          submenu:
+          actions:
             inbox: Prejeto
             spam: Nezaželjeno
             update_notified: Uredi prejemnike obvestila
@@ -44,7 +45,7 @@ sl:
             inquiry_settings_value_name: Pošlji obvestilo na
             hint: "V zgornje polje vnesite email naslov. Želite da obvestila prejme več oseb? Vnesite več email naslovov ločenih z vejicami."
             example: "Primer: jaz@domena.com, prijatelj@msn.com, sodelavec@work.com"
-          confirmation_email_form:
+          confirmation_email:
             to: Za
             from: Od
             subject: Zadeva

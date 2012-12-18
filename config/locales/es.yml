@@ -1,14 +1,15 @@
 es:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Consultas
     inquiries:
       inquiries:
-        new:
+        form:
           send: Enviar mensaje
           privacy_policy: "Nosotros valoramos tu privacidad"
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Borrar esta consulta para siempre
           inquiry:
@@ -16,7 +17,7 @@ es:
             said: dijo
             mark_as_spam: Marcar como spam
             mark_as_ham: Mover a la bandeja de entrada
-          submenu:
+          actions:
             inbox: Bandeja de entrada
             spam: Spam
             update_notified: Actualizar a quien se notifica
@@ -24,7 +25,7 @@ es:
           toggle_status:
             closed: "La consulta '%{inquiry}' esta cerrada"
             reopened: "La consulta '%{inquiry}' esta abierta"
-          index:
+          records:
             no_inquiries: No has recibido ninguna consulta aun.
             no_spam: No tienes nada de spam.
           show:
@@ -46,7 +47,7 @@ es:
             inquiry_settings_value_name: Mandar notificaciones a
             hint: "Cada vez que alguien envíe una consulta, Refinery enviara un correo electrónico notificándolo. Ingrese la dirección de correo de las persona que vaya a ser notificada, si quiere que varias personas sean notificadas ingrese las direcciones de correo separadas por comas."
             example: "Introduzca una dirección de correo como: me@domain.com, friend@msn.com, workmate@work.com"
-          confirmation_email_form:
+          confirmation_email:
             to: Para
             from: De
             subject: Asunto

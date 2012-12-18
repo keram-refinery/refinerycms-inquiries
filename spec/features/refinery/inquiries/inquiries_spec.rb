@@ -4,7 +4,7 @@ module Refinery
   module Inquiries
     describe "inquiries" do
       before(:each) do
-        Factory(:refinery_user)
+        FactoryGirl.create(:refinery_user)
 
         # load in seeds we use in migration
         Refinery::Inquiries::Engine.load_seed
@@ -12,7 +12,7 @@ module Refinery
 
       context "when valid data" do
         it "is successful" do
-          visit refinery.inquiries_new_inquiry_path
+          visit refinery.inquiries_contact_path
 
           fill_in "Name", :with => "Ugis Ozols"
           fill_in "Email", :with => "ugis.ozols@refinerycms.com"
@@ -38,11 +38,11 @@ module Refinery
         let(:message_error_message) { "Message can't be blank" }
 
         it "is not successful" do
-          visit refinery.inquiries_new_inquiry_path
+          visit refinery.inquiries_contact_path
 
           click_button "Send message"
 
-          page.current_path.should == refinery.inquiries_new_inquiry_path
+          page.current_path.should == refinery.inquiries_contact_path
           page.should have_content("There were problems with the following fields")
           page.should have_content(name_error_message)
           page.should have_content(email_error_message)
@@ -53,7 +53,7 @@ module Refinery
         end
 
         it "displays the error messages in the same order as the fields" do
-          visit refinery.inquiries_new_inquiry_path
+          visit refinery.inquiries_contact_path
 
           click_button "Send message"
 
@@ -68,7 +68,7 @@ module Refinery
           end
 
           it "won't show link" do
-            visit refinery.inquiries_new_inquiry_path
+            visit refinery.inquiries_contact_path
 
             page.should have_no_content("We value your privacy")
             page.should have_no_selector("a[href='/pages/privacy-policy']")
@@ -81,7 +81,7 @@ module Refinery
           end
 
           it "shows the link" do
-            visit refinery.inquiries_new_inquiry_path
+            visit refinery.inquiries_contact_path
 
             page.should have_content("We value your privacy")
             page.should have_selector("a[href='/pages/privacy-policy']")

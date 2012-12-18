@@ -1,0 +1,88 @@
+<section id="records" <%= 'class="spam"'.html_safe if @inquiry.spam? %>>
+  <h2>
+    <%= t('.inquiry') %> <%= time_ago_in_words(@inquiry.created_at) %> ago
+    <% if @inquiry.spam? %><strong><%= t('.spam_yes') %></strong><% end %>
+  </h2>
+  <table id="inquiry">
+    <tr>
+      <td>
+        <strong><%= t('.to') %></strong>
+      </td>
+      <td>
+        <%= Refinery::Core.config.site_name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong><%= t('.from') %></strong>
+      </td>
+      <td>
+        <%= @inquiry.name %> [<%= mail_to @inquiry.email, @inquiry.email, {:title => t('.click_to_email')} %>]
+      </td>
+    </tr>
+    <% unless @inquiry.phone.blank? %>
+      <tr>
+        <td>
+          <strong><%= t('.phone') %></strong>
+        </td>
+        <td>
+          <%= @inquiry.phone %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>
+        <strong><%= t('.date') %></strong>
+      </td>
+      <td>
+        <%= l(Date.parse(@inquiry.created_at.to_s), :format => :long) %>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+        <strong><%= t('.message') %></strong>
+      </td>
+      <td>
+        <%= simple_format strip_tags(@inquiry.message), :style => 'margin-top: 0' %>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<section id="actions">
+  <h2><%= t('.actions') %></h2>
+  <ul>
+    <li>
+      <%= link_to t('.back_to_all_inquiries'),
+                  refinery.admin_inquiries_inquiries_path,
+                  :class => 'icon-small icon-with-text back-icon' %>
+    </li>
+    <% unless @inquiry.archived? || @inquiry.spam? %>
+    <li>
+      <%= link_to t('archive', :scope => 'refinery.admin.record'),
+                  refinery.toggle_archive_admin_inquiries_inquiry_path(@inquiry),
+                  :class => 'icon-small icon-with-text archive-icon',
+                  :data => {
+                    :remote => true
+                  } -%>
+    </li>
+    <li>
+     <%= link_to t('mark_as_spam', :scope => 'refinery.admin.inquiries.inquiries.inquiry'),
+                  refinery.toggle_spam_admin_inquiries_inquiry_path(@inquiry),
+                  :class => 'icon-small icon-with-text spam-icon',
+                  :data => { :remote => true } -%>
+    </li>
+    <% end %>
+    <li>
+      <%= link_to t('delete', :scope => 'refinery.admin.inquiries.inquiries'),
+                  refinery.admin_inquiries_inquiry_path(@inquiry),
+                  :class => 'icon-small icon-with-text delete-icon confirm-delete',
+                  :title => t('refinery.inquiries.admin.inquiries.delete'),
+                  :data => {
+                    :remote => true,
+                    :confirm => t('refinery.admin.delete.message', :title => @inquiry.name)
+                  },
+                  :method => :delete %>
+    </li>
+  </ul>
+</section>

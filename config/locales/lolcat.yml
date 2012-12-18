@@ -1,15 +1,16 @@
 lolcat:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: INQUIRIEZ
         description: PROVIDEZ CONTACT FORM AN STOREZ INQUIRIEZ
     inquiries:
       inquiries:
-        new:
+        form:
           send: SEND MESAGE
           privacy_policy: WE VALUE UR PRIVACY
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: REMOOV DIS INQUIRY FOREVR
           inquiry:
@@ -17,12 +18,12 @@ lolcat:
             said: SED
             mark_as_spam: MARK AS SPAM
             mark_as_ham: MOOV 2 INBOX
-          submenu:
+          actions:
             inbox: INBOX
             spam: SPAM
             update_notified: UPDATE HOO GETS NOTIFID
             edit_confirmation_email: EDIT CONFIRMASHUN EMAIL
-          index:
+          records:
             no_inquiries: U HAS NOT RECEIVD ANY INQUIRIEZ YET.
             no_spam: HOORAH! U DOAN HAS ANY SPAM.
           show:
@@ -45,7 +46,7 @@ lolcat:
             explanation: EVRY TIEM SOMEONE CONTACTS U ON UR WEBSIET, REFINERY SENDZ OUT AN EMAIL 2 SAY THAR IZ NEW INQUIRY.
             hint: WHEN NEW INQUIRY IZ SUBMITTD, REFINERY WILL SEND AN EMAIL NOTIFICASHUN 2 U.
             example: "ENTR UR EMAIL ADDRES(EZ) LIEK: JACK@WERK.COM, JILL@OFFICE.COM"
-          confirmation_email_form:
+          confirmation_email:
             to: 2
             from: FRUM
             subject: SUBJECT

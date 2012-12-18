@@ -1,15 +1,16 @@
 cs:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Dotazy
         description: Zajišťuje kontaktní formulář a uchovává zaslané dotazy.
     inquiries:
       inquiries:
-        new:
+        form:
           send: Odeslat zprávu
           privacy_policy: Vážíme si Vaše soukromí
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Odstranit dotaz
           inquiry:
@@ -17,12 +18,12 @@ cs:
             said: řekl
             mark_as_spam: Označiť jako spam
             mark_as_ham: Přesunout do inbox-u
-          submenu:
+          actions:
             inbox: Inbox
             spam: Spam
             update_notified: Aktualizovat seznam notifikovaných
             edit_confirmation_email: Upravit potvrzující email
-          index:
+          records:
             no_inquiries: Nemáte žádné dotazy.
             no_spam: Hurá! Nemáte žádný spam.
           show:
@@ -44,7 +45,7 @@ cs:
             inquiry_settings_value_name: Odeslat notifikaci pro
             hint: Při posláni nového dotazu, Refinery zašle notifikační zprávu na zadané emaily.
             example: "Zadej tvou emailovou adresu(y) jako například: jack@work.com, jill@office.com"
-          confirmation_email_form:
+          confirmation_email:
             to: Pro
             from: Od
             subject: Subjekt

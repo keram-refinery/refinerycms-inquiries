@@ -1,16 +1,17 @@
 pl:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Zapytania
         description: Zapewnia formularz kontaktowy i przechowuje zapytania
         article: neutral
     inquiries:
       inquiries:
-        new:
+        form:
           send: Wyślij wiadomość
           privacy_policy: Cenimy Twoją prywatność
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Na zawsze usuń to zapytanie
           inquiry:
@@ -18,12 +19,12 @@ pl:
             said: powiedział
             mark_as_spam: Oznacz jako spam
             mark_as_ham: Przenieś do przychodzących
-          submenu:
+          actions:
             inbox: Przychodzące
             spam: Spam
             update_notified: Zmień, kto zostaje powiadamiany
             edit_confirmation_email: Zmień email z potwierdzeniem
-          index:
+          records:
             no_inquiries: Nie ma jeszcze żadnych zapytań.
             no_spam: Hurra! Nie masz żadnego spamu.
           show:
@@ -45,7 +46,7 @@ pl:
             inquiry_settings_value_name: Wysyłaj powiadomienia do
             hint: Kiedy dostarczone zostanie nowe zapytanie, Refinery wyśle do Ciebie wiadomość e-mail.
             example: "Podaj swój adres (lub adresy) e-mail, w taki sposób: jack@work.com, jill@office.com"
-          confirmation_email_form:
+          confirmation_email:
             to: Do
             from: Od
             subject: Temat

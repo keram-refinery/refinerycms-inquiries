@@ -1,15 +1,16 @@
 lt:
   refinery:
     plugins:
-      refinerycms_inquiries:
+      refinery_inquiries:
         title: Užklausos
         description: Suteikia kontaktų formą ir saugo užklausas
     inquiries:
       inquiries:
-        new:
+        form:
           send: Siųsti žinutę
           privacy_policy: Mes vertiname jūsų privatumą
-      admin:
+    admin:
+      inquiries:
         inquiries:
           delete: Pašalinti šią užklausą visam laikui
           inquiry:
@@ -17,12 +18,12 @@ lt:
             said: pasakė
             mark_as_spam: Pažymėti kaip šlamštą
             mark_as_ham: Perkelti prie Gautų laiškų
-          submenu:
+          actions:
             inbox: Gautieji
             spam: Šlamštas
             update_notified: Pakeiskite, kas gauna pranešimus
             edit_confirmation_email: Redaguoti patvirtinimo laišką
-          index:
+          records:
             no_inquiries: Kol kas nėra jokių užklausų.
             no_spam: Valio! Jūs neturite jokio spamo.
           show:
@@ -44,7 +45,7 @@ lt:
             inquiry_settings_value_name: Siųsti pranešimus į
             hint: Kai užpildoma nauja užklausa, Refinery jums atsiųs pranešimą.
             example: "Įveskite savo el. pašto adresą(us) pvz: jonas@imone.lt, petras@office.com"
-          confirmation_email_form:
+          confirmation_email:
             to: Kam
             from: Nuo
             subject: Tema

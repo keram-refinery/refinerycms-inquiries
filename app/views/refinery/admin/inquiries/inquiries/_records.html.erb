@@ -1,0 +1,16 @@
+<% if @inquiries.any? -%>
+  <%= will_paginate @inquiries %>
+  <% group_by_date(@inquiries).each do |container| %>
+    <h3><%= l((inquiry_group = container.last).first.created_at, :format => :short) %></h3>
+    <ul class="records">
+      <%= render :partial => 'inquiry', :collection => inquiry_group %>
+    </ul>
+  <% end %>
+  <%= will_paginate @inquiries %>
+<% else -%>
+  <p>
+    <strong>
+      <%= t(".no_#{list_type}_inquiries") %>
+    </strong>
+  </p>
+<% end -%>

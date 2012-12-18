@@ -1,15 +1,35 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', :git => 'git://github.com/refinery/refinerycms.git'
-gem 'refinerycms-settings', :git => 'git://github.com/refinery/refinerycms-settings.git'
-gem 'refinerycms-i18n', :git => 'git://github.com/refinery/refinerycms-i18n.git'
+gem 'refinerycms', :path => '../' # , :git => 'git://github.com/refinery/refinerycms.git'
+gem 'refinerycms-i18n', :path => '../' # , :git => 'git://github.com/refinery/refinerycms-i18n.git'
+
+gem 'rails', '~> 4.0.0.rc2'
+gem 'railties', '~> 4.0.0.rc2'
+gem 'devise', :path => '../devise' #:git => 'git://github.com/plataformatec/devise.git', :branch => 'rails4'
+gem 'decorators', :path => '../decorators'
+gem 'database_cleaner', :path => '../database_cleaner'
+
+gem 'globalize3', :path => '../globalize3'
+gem 'friendly_id', :path => '../friendly_id'
+gem 'filters_spam', :path => '../filters_spam'
+
+gem 'sass-rails', '~> 4.0.0.rc2'
+gem 'uglifier'
+
+# for dummy
+gem 'turbolinks', :path => '../turbolinks'
+
+gem 'jquery-rails', '~> 3.0.1'
+gem 'jquery-ui-rails', '~> 4.0.2'
+
+gem 'will_paginate'
 
 group :development, :test do
-  gem 'refinerycms-testing', :git => 'git://github.com/refinery/refinerycms.git'
-  gem 'guard-rspec', '~> 0.6.0'
-  gem "capybara-email", "~> 0.1.2"
+  gem 'refinerycms-testing', :path => '../refinerycms/' # , :git => 'git://github.com/refinery/refinerycms.git'
+  gem 'guard-rspec', '~> 3.0.2'
+  gem 'capybara-email', '~> 2.1.2'
 
   platforms :jruby do
     gem 'activerecord-jdbcsqlite3-adapter'
@@ -38,9 +58,9 @@ group :development, :test do
         gem 'ruby_gntp'
       end
       if RbConfig::CONFIG['target_os'] =~ /linux/i
-        gem 'rb-inotify', '>= 0.5.1'
-        gem 'libnotify',  '~> 0.1.3'
-        gem 'therubyracer', '~> 0.9.9'
+        gem 'rb-inotify', '~> 0.9.0'
+        gem 'libnotify',  '~> 0.8.0'
+        gem 'therubyracer', '~> 0.11.4'
       end
     end
   end
@@ -52,18 +72,9 @@ group :development, :test do
         gem 'ruby_gntp'
       end
       if RbConfig::CONFIG['target_os'] =~ /linux/i
-        gem 'rb-inotify', '>= 0.5.1'
-        gem 'libnotify',  '~> 0.1.3'
+        gem 'rb-inotify', '~> 0.9.0'
+        gem 'libnotify', '~> 0.8.0'
       end
     end
   end
 end
-
-# Refinery/rails should pull in the proper versions of these
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
-
-gem 'jquery-rails'
