@@ -96,7 +96,7 @@ module Refinery
           end
 
           it "won't show placeholders" do
-            visit refinery.inquiries_new_inquiry_path
+            visit refinery.inquiries_contact_path
 
             page.should have_no_selector("input[placeholder]")
           end
@@ -108,7 +108,7 @@ module Refinery
           end
 
           it "shows the placeholders" do
-            visit refinery.inquiries_new_inquiry_path
+            visit refinery.inquiries_contact_path
 
             page.should have_selector("input[placeholder]")
           end
@@ -122,7 +122,7 @@ module Refinery
           end
 
           it "won't show phone number" do
-            visit refinery.inquiries_new_inquiry_path
+            visit refinery.inquiries_contact_path
 
             page.should have_no_selector("label", :text => 'Phone')
             page.should have_no_selector("#inquiry_phone")
@@ -135,7 +135,7 @@ module Refinery
           end
 
           it "shows the phone number" do
-            visit refinery.inquiries_new_inquiry_path
+            visit refinery.inquiries_contact_path
 
             page.should have_selector("label", :text => 'Phone')
             page.should have_selector("#inquiry_phone")
