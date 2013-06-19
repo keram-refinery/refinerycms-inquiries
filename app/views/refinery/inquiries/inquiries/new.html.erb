@@ -1,9 +1,7 @@
-<% form_config = { }  %>
 <% content_for ::Refinery::Pages.main_part do %>
   <%= raw @page.content_for(::Refinery::Pages.main_part)  %>
   <%= content_tag(:div, @form_holder_config) do %>
-    <%= render :partial => 'form', :locals => {:form_config => form_config} %>
+    <%= render :partial => 'form' %>
   <% end %>
-
 <% end %>
 <%= render '/refinery/content_page' %>
