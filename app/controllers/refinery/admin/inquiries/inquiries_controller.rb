@@ -62,15 +62,15 @@ module Refinery
         protected
 
         def find_all_in_index
-          @inquiries = Refinery::Inquiries::Inquiry.fresh.ham.desc
+          @inquiries = Refinery::Inquiries::Inquiry.fresh.ham
         end
 
         def find_all_in_archived
-          @inquiries = Refinery::Inquiries::Inquiry.archived.desc
+          @inquiries = Refinery::Inquiries::Inquiry.archived
         end
 
         def find_all_in_spam
-          @inquiries = Refinery::Inquiries::Inquiry.spam.desc
+          @inquiries = Refinery::Inquiries::Inquiry.spam
         end
 
         def paginate_inquiries

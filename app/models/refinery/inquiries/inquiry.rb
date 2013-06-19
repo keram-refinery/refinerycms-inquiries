@@ -5,7 +5,7 @@ module Refinery
   module Inquiries
     class Inquiry < Refinery::Core::BaseModel
 
-      scope :desc, -> { order(id: :desc) }
+      default_scope -> { order(id: :desc) }
       scope :fresh, -> { where(archived: false) }
       scope :archived, -> { where(archived: true) }
 

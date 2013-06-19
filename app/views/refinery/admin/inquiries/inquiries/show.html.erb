@@ -1,6 +1,6 @@
 <section id="records" <%= 'class="spam"'.html_safe if @inquiry.spam? %>>
   <h2>
-    <%= t('.inquiry') %> <%= time_ago_in_words(@inquiry.created_at) %> ago
+    <%= t('.inquiry') %> <%= time_ago_in_words(@inquiry.created_at) %>
     <% if @inquiry.spam? %><strong><%= t('.spam_yes') %></strong><% end %>
   </h2>
   <table id="inquiry">
