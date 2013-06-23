@@ -10,10 +10,10 @@ module Refinery
 
         helper_method :group_by_date
 
-        before_filter :find_all_in_index, only: [:index]
-        before_filter :find_all_in_archived, only: [:archived]
-        before_filter :find_all_in_spam, only: [:spam]
-        before_filter :paginate_inquiries, only: [:index, :archived, :spam]
+        before_action :find_all_in_index, only: [:index]
+        before_action :find_all_in_archived, only: [:archived]
+        before_action :find_all_in_spam, only: [:spam]
+        before_action :paginate_inquiries, only: [:index, :archived, :spam]
 
         def spam
           render action: :index

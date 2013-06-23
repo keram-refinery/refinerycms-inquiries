@@ -2,8 +2,8 @@ module Refinery
   module Inquiries
     class InquiriesController < ::ApplicationController
 
-      before_filter :find_page
-      before_filter :redirect_unless_path_match, :only => [:new]
+      before_action :find_page
+      before_action :redirect_unless_path_match, :only => [:new]
 
       def new
         @inquiry = ::Refinery::Inquiries::Inquiry.new
