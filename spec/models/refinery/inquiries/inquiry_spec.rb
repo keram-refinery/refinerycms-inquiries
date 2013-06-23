@@ -20,8 +20,8 @@ module Refinery
 
       describe "default scope" do
         it "orders by created_at in desc" do
-          inquiry1 = FactoryGirl.create(:inquiry, :created_at => 1.hour.ago)
           inquiry2 = FactoryGirl.create(:inquiry, :created_at => 2.hours.ago)
+          inquiry1 = FactoryGirl.create(:inquiry, :created_at => 1.hour.ago)
           inquiries = Refinery::Inquiries::Inquiry.all
           inquiries.first.should == inquiry1
           inquiries.second.should == inquiry2
