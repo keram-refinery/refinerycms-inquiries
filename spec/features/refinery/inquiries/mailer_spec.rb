@@ -5,8 +5,6 @@ module Refinery
   module Inquiries
     describe "mailer" do
       before do
-        FactoryGirl.create(:page, :link_url => "/contact")
-
         Refinery::Inquiries::Setting.stub(:notification_recipients).and_return("rspec@refinerycms.com")
 
         clear_emails
@@ -21,6 +19,7 @@ module Refinery
 
       it "sends confirmation email", :js do
         open_email("ugis.ozols@refinerycms.com")
+        p current_email
 
         current_email.from.should eq(["no-reply@example.com"])
         current_email.to.should eq(["ugis.ozols@refinerycms.com"])

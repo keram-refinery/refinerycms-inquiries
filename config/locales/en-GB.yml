@@ -9,6 +9,18 @@ en-GB:
         form:
           send: Send message
           privacy_policy: We value your privacy
+      inquiry_mailer:
+        notification:
+          greeting: Hi there
+          you_recieved_new_inquiry: You just received a new enquiry on your website.
+          inquiry_starts: --- enquiry starts ---
+          inquiry_ends: --- enquiry ends ---
+          from: From
+          email: Email
+          phone: Phone
+          message: Message
+          closing_line: Kind Regards
+          ps: P.S. All your enquiries are stored in the "Enquiries" section of Refinery should you ever want to view it later there.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ en-GB:
             the_customer_making_inquiry: The customer making the enquiry
             message: Message
             note: "Note: place the text %name% where you'd like the customer's name to appear in the email"
-      inquiry_mailer:
-        notification:
-          greeting: Hi there
-          you_recieved_new_inquiry: You just received a new enquiry on your website.
-          inquiry_starts: --- enquiry starts ---
-          inquiry_ends: --- enquiry ends ---
-          from: From
-          email: Email
-          phone: Phone
-          message: Message
-          closing_line: Kind Regards
-          ps: P.S. All your enquiries are stored in the "Enquiries" section of Refinery should you ever want to view it later there.
   activerecord:
     models:
       refinery/inquiries/inquiry: inquiry

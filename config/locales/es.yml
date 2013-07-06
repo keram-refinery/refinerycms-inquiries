@@ -8,6 +8,18 @@ es:
         form:
           send: Enviar mensaje
           privacy_policy: "Nosotros valoramos tu privacidad"
+      inquiry_mailer:
+        notification:
+          greeting: Hola
+          you_recieved_new_inquiry: Has recibido una nueva consulta en tu web.
+          inquiry_starts: --- comienzo de la consulta ---
+          inquiry_ends: --- fin de la consulta ---
+          from: De
+          email: Correo
+          phone: Teléfono
+          message: Mensaje
+          closing_line: Saludos
+          ps: P.D. Todas tus consultas se almacenan en la sección "Consultas" de Refinery por si alguna vez quieres verlas más tarde allí.
     admin:
       inquiries:
         inquiries:
@@ -57,18 +69,6 @@ es:
             the_customer_making_inquiry: El cliente haciendo la consulta
             message: Mensaje
             note: "Nota: ingrese el texto %name% donde quiera que el nombre del cliente aparezca en el email"
-      inquiry_mailer:
-        notification:
-          greeting: Hola
-          you_recieved_new_inquiry: Has recibido una nueva consulta en tu web.
-          inquiry_starts: --- comienzo de la consulta ---
-          inquiry_ends: --- fin de la consulta ---
-          from: De
-          email: Correo
-          phone: Teléfono
-          message: Mensaje
-          closing_line: Saludos
-          ps: P.D. Todas tus consultas se almacenan en la sección "Consultas" de Refinery por si alguna vez quieres verlas más tarde allí.
   activerecord:
     models:
       refinery/inquiries/inquiry: Consulta

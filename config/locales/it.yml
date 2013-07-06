@@ -11,6 +11,18 @@ it:
           message: "I seguenti problemi devono essere corretti:"
           send: Invia messaggio
           privacy_policy: "Noi diamo valore alla tua privacy"
+      inquiry_mailer:
+        notification:
+          greeting: Ciao a tutti
+          you_recieved_new_inquiry: Hai appena ricevuto una nuova richiesta sul tuo sito.
+          inquiry_starts: --- inizio del messaggio ---
+          inquiry_ends: --- fine del messaggio ---
+          from: Da
+          email: Email
+          phone: Telefono
+          message: Messaggio
+          closing_line: Saluti
+          ps: P.S. Tutte le richiesta ricevute sono salvate nella sezione "Richieste" di Refinery così da poter esser viste in un secondo momento.
     admin:
       inquiries:
         inquiries:
@@ -57,18 +69,6 @@ it:
             the_customer_making_inquiry: Chi invia il messaggio
             message: Messaggio
             note: "Nota: inserire nella email il testo %name% dove si vuole che compiaia il nome di chi invia la richiesta"
-      inquiry_mailer:
-        notification:
-          greeting: Ciao a tutti
-          you_recieved_new_inquiry: Hai appena ricevuto una nuova richiesta sul tuo sito.
-          inquiry_starts: --- inizio del messaggio ---
-          inquiry_ends: --- fine del messaggio ---
-          from: Da
-          email: Email
-          phone: Telefono
-          message: Messaggio
-          closing_line: Saluti
-        ps: P.S. Tutte le richiesta ricevute sono salvate nella sezione "Richieste" di Refinery così da poter esser viste in un secondo momento.
   activerecord:
     models:
       refinery/inquiries/inquiry: inquiry

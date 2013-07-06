@@ -9,6 +9,18 @@ zh-CN:
         form:
           send: 发送消息
           privacy_policy: 我们珍视您的隐私
+      inquiry_mailer:
+        notification:
+          greeting: 您好
+          you_recieved_new_inquiry: 你刚从你的网站收到一条新的咨询.
+          inquiry_starts: --- 咨询开始处 ---
+          inquiry_ends: --- 咨询结束处 ---
+          from: 表单
+          email: email
+          phone: 电话
+          message: 信息
+          closing_line: 谨致问候
+          ps: 附言 您所有的咨询被保存在“咨询”区域以便于你在日后查看.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ zh-CN:
             the_customer_making_inquiry: 客户正在写咨询
             message: 信息
             note: "注意: 把你的客户名字在电子邮件出现的位置以文字 %name% 做替换"
-      inquiry_mailer:
-        notification:
-          greeting: 您好
-          you_recieved_new_inquiry: 你刚从你的网站收到一条新的咨询.
-          inquiry_starts: --- 咨询开始处 ---
-          inquiry_ends: --- 咨询结束处 ---
-          from: 表单
-          email: email
-          phone: 电话
-          message: 信息
-          closing_line: 谨致问候
-          ps: 附言 您所有的咨询被保存在“咨询”区域以便于你在日后查看.
   activerecord:
     models:
       refinery/inquiries/inquiry: inquiry

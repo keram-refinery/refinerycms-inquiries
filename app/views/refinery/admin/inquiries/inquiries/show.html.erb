@@ -1,9 +1,9 @@
-<section id="records" <%= 'class="spam"'.html_safe if @inquiry.spam? %>>
+<section id="records" >
   <h2>
     <%= t('.inquiry') %> <%= time_ago_in_words(@inquiry.created_at) %>
-    <% if @inquiry.spam? %><strong><%= t('.spam_yes') %></strong><% end %>
+    <% if @inquiry.spam? %><span class="float-right"><%= t('.spam_yes') %></span><% end %>
   </h2>
-  <table id="inquiry">
+  <table id="inquiry" class="record<%= ' spam '.html_safe if @inquiry.spam? %>">
     <tr>
       <td>
         <strong><%= t('.to') %></strong>
@@ -61,26 +61,22 @@
     <li>
       <%= link_to t('archive', :scope => 'refinery.admin.record'),
                   refinery.toggle_archive_admin_inquiries_inquiry_path(@inquiry),
-                  :class => 'icon-small icon-with-text archive-icon',
-                  :data => {
-                    :remote => true
-                  } -%>
+                  :class => 'icon-small icon-with-text folder-icon' -%>
     </li>
     <li>
      <%= link_to t('mark_as_spam', :scope => 'refinery.admin.inquiries.inquiries.inquiry'),
                   refinery.toggle_spam_admin_inquiries_inquiry_path(@inquiry),
-                  :class => 'icon-small icon-with-text spam-icon',
-                  :data => { :remote => true } -%>
+                  :class => 'icon-small icon-with-text spam-icon' -%>
     </li>
     <% end %>
     <li>
       <%= link_to t('delete', :scope => 'refinery.admin.inquiries.inquiries'),
                   refinery.admin_inquiries_inquiry_path(@inquiry),
-                  :class => 'icon-small icon-with-text delete-icon confirm-delete',
+                  :class => 'delete icon-small icon-with-text delete-icon confirm-delete',
                   :title => t('refinery.inquiries.admin.inquiries.delete'),
                   :data => {
                     :remote => true,
-                    :confirm => t('refinery.admin.delete.message', :title => @inquiry.name)
+                    #:confirm => t('refinery.admin.delete.message', :title => @inquiry.name)
                   },
                   :method => :delete %>
     </li>

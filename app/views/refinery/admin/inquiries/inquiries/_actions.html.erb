@@ -7,14 +7,14 @@
   </li>
   <li <%= 'class="selected"'.html_safe if action_name == 'archived' %>>
     <%= link_to refinery.archived_admin_inquiries_inquiries_path,
-                :class => 'icon-small icon-with-text archived-icon' do %>
+                :class => 'icon-small icon-with-text folder-icon' do %>
       <%= t('.archived') -%> <i id="archived_count"><%= "(#{archived_count})" if archived_count > 0 -%></i>
     <% end -%>
   </li>
   <li <%= 'class="selected"'.html_safe if action_name == 'spam' %>>
       <%= link_to refinery.spam_admin_inquiries_inquiries_path,
                 :class => "icon-small icon-with-text " +
-                          "spam#{'-empty' if params[:action] != 'spam'}-icon" do %>
+                          "spam-icon" do %>
         <%= t('.spam') -%> <i id="spam_count"><%= "(#{spam_count})" if spam_count > 0 -%></i>
       <% end %>
   </li>

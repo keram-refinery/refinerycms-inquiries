@@ -4,11 +4,25 @@ en:
       refinery_inquiries:
         title: Inquiries
         description: Provides a contact form and stores inquiries
+    crudify:
+      inquiry: Inquiry
     inquiries:
       inquiries:
         form:
           send: Send message
           privacy_policy: We value your privacy
+      inquiry_mailer:
+        notification:
+          greeting: Hi there
+          you_recieved_new_inquiry: You just received a new inquiry on your website.
+          inquiry_starts: --- inquiry starts ---
+          inquiry_ends: --- inquiry ends ---
+          from: From
+          email: Email
+          phone: Phone
+          message: Message
+          closing_line: Kind Regards
+          ps: P.S. All your inquiries are stored in the "Inquiries" section of Refinery should you ever want to view it later there.
     admin:
       inquiries:
         inquiries:
@@ -58,18 +72,6 @@ en:
             the_customer_making_inquiry: The customer making the inquiry
             message: Message
             note: "Note: place the text %name% where you'd like the customer's name to appear in the email"
-      inquiry_mailer:
-        notification:
-          greeting: Hi there
-          you_recieved_new_inquiry: You just received a new inquiry on your website.
-          inquiry_starts: --- inquiry starts ---
-          inquiry_ends: --- inquiry ends ---
-          from: From
-          email: Email
-          phone: Phone
-          message: Message
-          closing_line: Kind Regards
-          ps: P.S. All your inquiries are stored in the "Inquiries" section of Refinery should you ever want to view it later there.
   activerecord:
     models:
       refinery/inquiries/inquiry: inquiry

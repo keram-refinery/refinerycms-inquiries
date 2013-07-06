@@ -9,6 +9,18 @@ ru:
         form:
           send: Отправить сообщение
           privacy_policy: Мы относимся с уважением к вашим личным данным
+      inquiry_mailer:
+        notification:
+          greeting: Здравствуйте
+          you_recieved_new_inquiry: Вы только что получили новый запрос со своего сайта
+          inquiry_starts: --- начало запроса ---
+          inquiry_ends: --- конец запроса ---
+          from: От
+          email: Эл. почта
+          phone: Телефон
+          message: Сообщение
+          closing_line: С наилучшими пожеланиями
+          ps: Все запросы вы можете увидеть в соответствующем разделе Refinery.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ ru:
             the_customer_making_inquiry: "Клиент, делающий запрос"
             message: Сообщение
             note: "Примечание. Поместите текст %name% там, где вы хотите, чтобы появилось имя клиента."
-      inquiry_mailer:
-        notification:
-          greeting: Здравствуйте
-          you_recieved_new_inquiry: Вы только что получили новый запрос со своего сайта
-          inquiry_starts: --- начало запроса ---
-          inquiry_ends: --- конец запроса ---
-          from: От
-          email: Эл. почта
-          phone: Телефон
-          message: Сообщение
-          closing_line: С наилучшими пожеланиями
-          ps: Все запросы вы можете увидеть в соответствующем разделе Refinery.
   activerecord:
     models:
       refinery/inquiries/inquiry: Запрос

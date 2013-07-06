@@ -9,6 +9,18 @@ sv:
         form:
           send: Skicka meddelande
           privacy_policy: Vi värderar ditt privatliv
+      inquiry_mailer:
+        notification:
+          greeting: Hej!
+          you_recieved_new_inquiry: Du har just mottagit en ny förfrågan på din webbplats.
+          inquiry_starts: --- förfrågan börjar ---
+          inquiry_ends: --- förfrågan slutar ---
+          from: Från
+          email: E-postadress
+          phone: Telefon
+          message: Meddelande
+          closing_line: Vänliga hälsningar
+          ps: P.S. Alla dina förfrågningar sparas i "Förfrågningar"-sektionen av Refinery. Där kan du visa dem senare.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ sv:
             the_customer_making_inquiry: Besökaren som skickat förfrågan
             message: Meddelande
             note: "Notis: placera texten %name% där du vill att besökarens namn ska visas i brevet"
-      inquiry_mailer:
-        notification:
-          greeting: Hej!
-          you_recieved_new_inquiry: Du har just mottagit en ny förfrågan på din webbplats.
-          inquiry_starts: --- förfrågan börjar ---
-          inquiry_ends: --- förfrågan slutar ---
-          from: Från
-          email: E-postadress
-          phone: Telefon
-          message: Meddelande
-          closing_line: Vänliga hälsningar
-          ps: P.S. Alla dina förfrågningar sparas i "Förfrågningar"-sektionen av Refinery. Där kan du visa dem senare.
   activerecord:
     models:
       refinery/inquiries/inquiry: förfrågning

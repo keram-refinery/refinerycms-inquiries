@@ -5,8 +5,8 @@ gemspec
 gem 'refinerycms', :path => '../' # , :git => 'git://github.com/refinery/refinerycms.git'
 gem 'refinerycms-i18n', :path => '../' # , :git => 'git://github.com/refinery/refinerycms-i18n.git'
 
-gem 'rails', '~> 4.0.0.rc2'
-gem 'railties', '~> 4.0.0.rc2'
+gem 'rails', '~> 4.0.0'
+gem 'railties', '~> 4.0.0'
 gem 'devise', :path => '../devise' #:git => 'git://github.com/plataformatec/devise.git', :branch => 'rails4'
 gem 'decorators', :path => '../decorators'
 gem 'database_cleaner', :path => '../database_cleaner'
@@ -15,7 +15,7 @@ gem 'globalize3', :path => '../globalize3'
 gem 'friendly_id', :path => '../friendly_id'
 gem 'filters_spam', :path => '../filters_spam'
 
-gem 'sass-rails', '~> 4.0.0.rc2'
+gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier'
 
 # for dummy
@@ -59,7 +59,7 @@ group :development, :test do
       end
       if RbConfig::CONFIG['target_os'] =~ /linux/i
         gem 'rb-inotify', '~> 0.9.0'
-        gem 'libnotify',  '~> 0.8.0'
+        gem 'libnotify',  '~> 0.8.1'
         gem 'therubyracer', '~> 0.11.4'
       end
     end
@@ -73,7 +73,7 @@ group :development, :test do
       end
       if RbConfig::CONFIG['target_os'] =~ /linux/i
         gem 'rb-inotify', '~> 0.9.0'
-        gem 'libnotify', '~> 0.8.0'
+        gem 'libnotify', '~> 0.8.1'
       end
     end
   end

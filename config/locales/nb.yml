@@ -9,6 +9,18 @@ nb:
         form:
           send: Send melding
           privacy_policy: "Vi respekterer ditt privatliv"
+      inquiry_mailer:
+        notification:
+          greeting: Hei
+          you_recieved_new_inquiry: Du har mottatt en ny forespørsel på nettsiden din.
+          inquiry_starts: --- Start på forespørsel ---
+          inquiry_ends: --- Slutt på forespørsel ---
+          from: Fra
+          email: Epost
+          phone: Telefon
+          message: Melding
+          closing_line: Vennlig hilsen
+          ps: P.S. Alle dine forespørsler blir lagret i seksjonen "Forespørsel" i Refinery om du vil finne de igjen senere
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ nb:
             the_customer_making_inquiry: Kunden som skrev forespørselen
             message: Melding
             note: "Merk: plasser teksten %name% der du ønsker at kundens navn skal vises i e-posten"
-      inquiry_mailer:
-        notification:
-          greeting: Hei
-          you_recieved_new_inquiry: Du har mottatt en ny forespørsel på nettsiden din.
-          inquiry_starts: --- Start på forespørsel ---
-          inquiry_ends: --- Slutt på forespørsel ---
-          from: Fra
-          email: Epost
-          phone: Telefon
-          message: Melding
-          closing_line: Vennlig hilsen
-          ps: P.S. Alle dine forespørsler blir lagret i seksjonen "Forespørsel" i Refinery om du vil finne de igjen senere
   activerecord:
     models:
       refinery/inquiries/inquiry: Forespørsel

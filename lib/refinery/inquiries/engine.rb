@@ -1,7 +1,7 @@
 module Refinery
   module Inquiries
     class Engine < Rails::Engine
-      include Refinery::Engine
+      extend Refinery::Engine
 
       isolate_namespace Refinery::Inquiries
 

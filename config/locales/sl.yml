@@ -9,6 +9,18 @@ sl:
         form:
           send: Pošlji sporočilo
           privacy_policy: "Cenimo vašo zasebnost"
+      inquiry_mailer:
+        notification:
+          greeting: Pozdravljeni
+          you_recieved_new_inquiry: Na vaši spletni strani ste prejeli ste novo povpraševanje.
+          inquiry_starts: --- začetek povpraševanja ---
+          inquiry_ends: --- konec povpraševanja ---
+          from: Od
+          email: Email
+          phone: Telefon
+          message: Sporočilo
+          closing_line: Lepo Pozdravljeni
+          ps: P.S. Vsa povpraševanja so shranjena pod zavihkom "Povpraševanja" v Refinery.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ sl:
             the_customer_making_inquiry: Stranka, ki je poslala povpraševanje
             message: Sporočilo
             note: "Opomba: vstavite tekst %name% kjer želite, da se pojavi ime stranke v email sporočilu."
-      inquiry_mailer:
-        notification:
-          greeting: Pozdravljeni
-          you_recieved_new_inquiry: Na vaši spletni strani ste prejeli ste novo povpraševanje.
-          inquiry_starts: --- začetek povpraševanja ---
-          inquiry_ends: --- konec povpraševanja ---
-          from: Od
-          email: Email
-          phone: Telefon
-          message: Sporočilo
-          closing_line: Lepo Pozdravljeni
-          ps: P.S. Vsa povpraševanja so shranjena pod zavihkom "Povpraševanja" v Refinery.
   activerecord:
     models:
       refinery/inquiries/inquiry: Povpraševanje

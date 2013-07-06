@@ -9,6 +9,18 @@ cs:
         form:
           send: Odeslat zprávu
           privacy_policy: Vážíme si Vaše soukromí
+      inquiry_mailer:
+        notification:
+          greeting: Ahoj
+          you_recieved_new_inquiry: Právě jsi obdržel nový dotaz na webové stránce.
+          inquiry_starts: --- začátek dotazu ---
+          inquiry_ends: --- konec dotazu ---
+          from: Od
+          email: Email
+          phone: Telefon
+          message: Zpráva
+          closing_line: S pozdravem
+          ps: P.S. Všechny dotazy jsou uloženy pod sekcí "Dotazy" v administraci, pokud by je bylo třeba zobrazit později.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ cs:
             the_customer_making_inquiry: Klient zaslal dotaz
             message: Zpráva
             note: "Poznámka: Vlož text %name% kde chceš aby se nacházelo klientove jméno ve zprávě."
-      inquiry_mailer:
-        notification:
-          greeting: Ahoj
-          you_recieved_new_inquiry: Právě jsi obdržel nový dotaz na webové stránce.
-          inquiry_starts: --- začátek dotazu ---
-          inquiry_ends: --- konec dotazu ---
-          from: Od
-          email: Email
-          phone: Telefon
-          message: Zpráva
-          closing_line: S pozdravem
-          ps: P.S. Všechny dotazy jsou uloženy pod sekcí "Dotazy" v administraci, pokud by je bylo třeba zobrazit později.
   activerecord:
     models:
       refinery/inquiries/inquiry: dotaz

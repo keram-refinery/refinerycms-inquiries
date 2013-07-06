@@ -13,6 +13,7 @@ module Refinery
         before_action :find_all_in_index, only: [:index]
         before_action :find_all_in_archived, only: [:archived]
         before_action :find_all_in_spam, only: [:spam]
+        before_action :find_inquiry, only: [:show, :destroy, :toggle_archive, :toggle_spam]
         before_action :paginate_inquiries, only: [:index, :archived, :spam]
 
         def spam
@@ -24,39 +25,13 @@ module Refinery
         end
 
         def toggle_archive
-          find_inquiry
           @inquiry.toggle!(:archived)
-
-          if request.xhr?
-            send(:"find_all_in_#{list_type}")
-            paginate_inquiries
-
-            render json: json_response(html: {
-              records: render_html_to_json_string('records'),
-              fresh_count: (fresh_count > 0 ? "(#{fresh_count})" : ''),
-              archived_count: (archived_count > 0 ? "(#{archived_count})" : '')
-            })
-          else
-            redirect_to @inquiry.archived? ? refinery.admin_inquiries_inquiries_path : refinery.archived_admin_inquiries_inquiries_path
-          end
+          redirect_to(@inquiry.archived? ? refinery.admin_inquiries_inquiries_path : refinery.archived_admin_inquiries_inquiries_path)
         end
 
         def toggle_spam
-          find_inquiry
           @inquiry.toggle!(:spam)
-
-          if request.xhr?
-            send(:"find_all_in_#{list_type}")
-            paginate_inquiries
-
-            render json: json_response(html: {
-              records: render_html_to_json_string('records'),
-              spam_count: (spam_count > 0 ? "(#{spam_count})" : ''),
-              fresh_count: (fresh_count > 0 ? "(#{fresh_count})" : '')
-            })
-          else
-            redirect_to @inquiry.spam? ? refinery.admin_inquiries_inquiries_path : refinery.spam_admin_inquiries_inquiries_path
-          end
+          redirect_to(@inquiry.spam? ? refinery.admin_inquiries_inquiries_path : refinery.spam_admin_inquiries_inquiries_path)
         end
 
         protected

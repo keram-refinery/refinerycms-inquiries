@@ -9,6 +9,18 @@ nl:
         form:
           send: Verstuur uw vraag
           privacy_policy: Wij respecteren uw privacy
+      inquiry_mailer:
+        notification:
+          greeting: Hallo
+          you_recieved_new_inquiry: Je hebt een nieuwe vraag ontvangen via je website.
+          inquiry_starts: --- begin van de vraag ---
+          inquiry_ends: --- einde van de vraag ---
+          from: Van
+          email: E-mail
+          phone: Telefoon
+          message: Bericht
+          closing_line: Met vriendelijk groet,
+          ps: P.S. Alle vragen woren opgeslagen in de sectie "Contactaanvragen" van Refinery.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ nl:
             the_customer_making_inquiry: De persoon die de heeft vraag gesteld
             message: Bericht
             note: "N.B.: plaats de tekst %name% overal in de e-mail waar je de naam van de vragende persoon wilt invoegen"
-      inquiry_mailer:
-        notification:
-          greeting: Hallo
-          you_recieved_new_inquiry: Je hebt een nieuwe vraag ontvangen via je website.
-          inquiry_starts: --- begin van de vraag ---
-          inquiry_ends: --- einde van de vraag ---
-          from: Van
-          email: E-mail
-          phone: Telefoon
-          message: Bericht
-          closing_line: Met vriendelijk groet,
-          ps: P.S. Alle vragen woren opgeslagen in de sectie "Contactaanvragen" van Refinery.
   activerecord:
     models:
       refinery/inquiries/inquiry: Vraag

@@ -9,6 +9,18 @@ sk:
         form:
           send: Odoslať správu
           privacy_policy: Vážime si Vaše súkromie
+      inquiry_mailer:
+        notification:
+          greeting: Ahoj
+          you_recieved_new_inquiry: Práve si obdržal novú otázku na webovej stránke.
+          inquiry_starts: --- začiatok otázky ---
+          inquiry_ends: --- koniec otázky ---
+          from: Od
+          email: Email
+          phone: Telefón
+          message: Správa
+          closing_line: S pozdravom
+          ps: P.S. Všetky otázky sú uložené pod sekciou "Otázky" v administrácii web stránky, ak by ich bolo potrebné zobraziť neskôr.
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ sk:
             the_customer_making_inquiry: Klient zaslal otázku
             message: Správa
             note: "Poznámka: Vlož text %name% kde chceš aby sa nachádzalo klientove meno v správe."
-      inquiry_mailer:
-        notification:
-          greeting: Ahoj
-          you_recieved_new_inquiry: Práve si obdržal novú otázku na webovej stránke.
-          inquiry_starts: --- začiatok otázky ---
-          inquiry_ends: --- koniec otázky ---
-          from: Od
-          email: Email
-          phone: Telefón
-          message: Správa
-          closing_line: S pozdravom
-          ps: P.S. Všetky otázky sú uložené pod sekciou "Otázky" v administrácii web stránky, ak by ich bolo potrebné zobraziť neskôr.
   activerecord:
     models:
       refinery/inquiries/inquiry: otázka

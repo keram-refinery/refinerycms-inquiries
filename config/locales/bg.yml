@@ -9,6 +9,18 @@ bg:
         form:
           send: Изпращане на съобщение
           privacy_policy: Високо ценим Вашите лични данни
+      inquiry_mailer:
+        notification:
+          greeting: Здравейте
+          you_recieved_new_inquiry: Току що получихте ново запитване през Вашия уебсайт.
+          inquiry_starts: --- Начало на запитването ---
+          inquiry_ends: --- Край на запитването ---
+          from: От
+          email: Е-поща
+          phone: Телефон
+          message: Съобщение
+          closing_line: Поздрави
+          ps: 'П.П. Всички запитвания към Вас се съхраняват от Refinery в секция "Запитвания" и могат да бъдат прегледани по-късно.'
     admin:
       inquiries:
         inquiries:
@@ -55,18 +67,6 @@ bg:
           the_customer_making_inquiry: Запитващ
           message: Съобщение
           note: 'Забележка: Поставете текста "%name%", където бихте желали да се появи името на запитващия в писмото'
-    inquiry_mailer:
-      notification:
-        greeting: Здравейте
-        you_recieved_new_inquiry: Току що получихте ново запитване през Вашия уебсайт.
-        inquiry_starts: --- Начало на запитването ---
-        inquiry_ends: --- Край на запитването ---
-        from: От
-        email: Е-поща
-        phone: Телефон
-        message: Съобщение
-        closing_line: Поздрави
-        ps: 'П.П. Всички запитвания към Вас се съхраняват от Refinery в секция "Запитвания" и могат да бъдат прегледани по-късно.'
   activerecord:
     models:
       refinery/inquiries/inquiry: запитване

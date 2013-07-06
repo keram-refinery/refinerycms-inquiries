@@ -9,6 +9,18 @@ lv:
         form:
           send: Sūtīt ziņu
           privacy_policy: Mēs cienam Jūsu privātumu
+      inquiry_mailer:
+        notification:
+          greeting: Sveiki
+          you_recieved_new_inquiry: Jūs nupat saņēmāt jaunu pieprasījumu savā mājaslapā.
+          inquiry_starts: --- pieprasījuma sākums ---
+          inquiry_ends: --- pieprasījuma beigas ---
+          from: 'No'
+          email: Epasts
+          phone: Tālrunis
+          message: Ziņa
+          closing_line: Ar cieņu
+          ps: P.S. Ja vēlaties skatīt šo un citus pieprasījumus vēlāk, tad tos var atrast zem sadaļas "Pieprasījumi".
     admin:
       inquiries:
         inquiries:
@@ -56,18 +68,6 @@ lv:
             the_customer_making_inquiry: Klients, kurš izveidoja pieprasījumu
             message: Ziņa
             note: "Piezīme: ievieto šo tektstu %name% tur, kur tu epastā vēlies norādīt klienta vārdu"
-      inquiry_mailer:
-        notification:
-          greeting: Sveiki
-          you_recieved_new_inquiry: Jūs nupat saņēmāt jaunu pieprasījumu savā mājaslapā.
-          inquiry_starts: --- pieprasījuma sākums ---
-          inquiry_ends: --- pieprasījuma beigas ---
-          from: 'No'
-          email: Epasts
-          phone: Tālrunis
-          message: Ziņa
-          closing_line: Ar cieņu
-          ps: P.S. Ja vēlaties skatīt šo un citus pieprasījumus vēlāk, tad tos var atrast zem sadaļas "Pieprasījumi".
   activerecord:
     models:
       refinery/inquiries/inquiry: pieprasījums

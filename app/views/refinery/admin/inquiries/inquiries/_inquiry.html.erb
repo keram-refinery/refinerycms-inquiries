@@ -13,26 +13,22 @@
                 :title => t('.read_inquiry') -%>
 
 
-    <%= link_to t('archive', :scope => 'refinery.admin.record'),
-                refinery.toggle_archive_admin_inquiries_inquiry_path(inquiry),
-                :class => "archive icon-small archive-icon",
-                :title => t('archive', :scope => 'refinery.admin.record'),
-                :data => {
-                  :remote => true
-                } if list_type == 'index' -%>
 
     <% if list_type == 'index' %>
+
+      <%= link_to t('archive', :scope => 'refinery.admin.record'),
+                  refinery.toggle_archive_admin_inquiries_inquiry_path(inquiry),
+                  :class => "archive icon-small folder-icon",
+                  :title => t('archive', :scope => 'refinery.admin.record') -%>
 
       <%= link_to t('.mark_as_spam'),
                   refinery.toggle_spam_admin_inquiries_inquiry_path(inquiry),
                   :class => 'icon-small spam-icon',
-                  :data => { :remote => true },
                   :title => t('.mark_as_spam') -%>
     <% elsif list_type == 'spam' %>
       <%= link_to t('.mark_as_ham'),
                   refinery.toggle_spam_admin_inquiries_inquiry_path(inquiry),
                   :class => 'icon-small email-icon',
-                  :data => { :remote => true },
                   :title => t('.mark_as_ham') -%>
     <% end %>
 
@@ -42,7 +38,7 @@
                 :title => t('refinery.admin.inquiries.inquiries.delete'),
                 :data => {
                   :remote => true,
-                  :confirm => t('refinery.admin.delete.message', :title => inquiry.name)
+                  #:confirm => t('refinery.admin.delete.message', :title => inquiry.name)
                 },
                 :method => :delete -%>
   </span>
