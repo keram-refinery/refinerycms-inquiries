@@ -7,6 +7,8 @@ en:
     crudify:
       inquiry: Inquiry
     inquiries:
+      config:
+        from_name: "%{name} [%{site_name}]"
       inquiries:
         form:
           send: Send message

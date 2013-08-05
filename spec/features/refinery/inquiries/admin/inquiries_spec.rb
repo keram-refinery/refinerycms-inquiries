@@ -7,9 +7,10 @@ module Refinery
         refinery_login_with :refinery_user
 
         let!(:inquiry) do
-          FactoryGirl.create(:inquiry, :name => "David Jones",
-                            :email => "dave@refinerycms.com",
-                            :message => "Hello, I really like your website.  Was it hard to build and maintain or could anyone do it?")
+          FactoryGirl.create(:inquiry,
+            :name => "David Jones",
+            :email => "dave@refinerycms.com",
+            :message => "Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
         end
 
         context "when no" do
@@ -38,15 +39,13 @@ module Refinery
           specify "in the side pane" do
             within "#actions" do
               page.should have_content("Inbox")
-              page.should have_selector('a[href="/refinery/inquiries"]')
-              page.should have_content("Archived")
-              page.should have_selector('a[href="/refinery/inquiries/archived"]')
+              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
               page.should have_content("Spam")
-              page.should have_selector('a[href="/refinery/inquiries/spam"]')
+              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/spam']")
               page.should have_content("Update who gets notified")
-              page.should have_selector('a[href="/refinery/inquiries/settings/inquiry_notification_recipients/edit"]')
+              page.should have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_notification_recipients/edit']")
               page.should have_content("Edit confirmation email")
-              page.should have_selector('a[href="/refinery/inquiries/settings/confirmation_email"]')
+              page.should have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_confirmation_body/edit']")
             end
           end
         end
@@ -55,7 +54,7 @@ module Refinery
           it "shows inquiry list" do
             visit refinery.admin_inquiries_inquiries_path
 
-            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build ...")
+            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
           end
         end
 
@@ -69,13 +68,13 @@ module Refinery
             page.should have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
             within "#actions" do
               page.should have_content("Back to all Inquiries")
-              page.should have_selector("a[href='/refinery/inquiries']")
+              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries']")
               page.should have_content("Archive")
-              page.should have_selector("a[href='/refinery/inquiries/#{inquiry.id}/toggle_archive']")
+              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/#{inquiry.id}/toggle_archive']")
               page.should have_content("Mark as spam")
-              page.should have_selector("a[href='/refinery/inquiries/#{inquiry.id}/toggle_spam']")
+              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/#{inquiry.id}/toggle_spam']")
               page.should have_content("Remove this inquiry forever")
-              page.should have_selector("a[href='/refinery/inquiries/#{inquiry.id}']")
+              page.should have_selector("a[href='/#{Refinery::Core.backend_route}/inquiries/#{inquiry.id}']")
             end
           end
         end
@@ -102,7 +101,7 @@ module Refinery
               click_link "Spam (1)"
             end
 
-            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build ...")
+            page.should have_content("David Jones said Hello, I really like your website. Was it hard to build a...")
           end
         end
 

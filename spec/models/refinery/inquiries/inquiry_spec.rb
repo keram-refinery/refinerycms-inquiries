@@ -6,9 +6,9 @@ module Refinery
       describe "validations" do
         subject do
           FactoryGirl.build(:inquiry,
-                        :name => "Ugis Ozols",
-                        :email => "ugis.ozols@refinerycms.com",
-                        :message => "Hey, I'm testing!")
+                            :name => "Ugis Ozols",
+                            :email => "ugis.ozols@refinerycms.com",
+                            :message => "Hey, I'm testing!")
         end
 
         it { should be_valid }
@@ -20,8 +20,9 @@ module Refinery
 
       describe "default scope" do
         it "orders by created_at in desc" do
-          inquiry2 = FactoryGirl.create(:inquiry, :created_at => 2.hours.ago)
-          inquiry1 = FactoryGirl.create(:inquiry, :created_at => 1.hour.ago)
+          inquiry2 = FactoryGirl.create(:inquiry)
+          inquiry1 = FactoryGirl.create(:inquiry)
+
           inquiries = Refinery::Inquiries::Inquiry.all
           inquiries.first.should == inquiry1
           inquiries.second.should == inquiry2

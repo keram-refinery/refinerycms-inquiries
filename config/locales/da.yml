@@ -4,6 +4,8 @@ da:
       refinery_inquiries:
         title: Henvendelser
     inquiries:
+      config:
+        from_name: "%{name} [%{site_name}]"
       inquiries:
         form:
           header_message: "Der er et mindre problem"

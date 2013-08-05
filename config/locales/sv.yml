@@ -5,6 +5,8 @@ sv:
         title: Förfrågningar
         description: Tillhandahåller ett formulär och sparar förfrågningar
     inquiries:
+      config:
+        from_name: "%{name} [%{site_name}]"
       inquiries:
         form:
           send: Skicka meddelande
@@ -24,9 +26,9 @@ sv:
     admin:
       inquiries:
         inquiries:
-          delete: Ta bort den här förfrågningen för alltid
+          delete: Ta bort den här förfrågan för alltid
           inquiry:
-            read_inquiry: Läs förfrågningen
+            read_inquiry: Läs förfrågan
             said: said
             mark_as_spam: Märk som skräppost
             mark_as_ham: Flytta till inkorg
@@ -42,10 +44,10 @@ sv:
             details: Detaljer
             age: Ålder
             actions: Handlingar
-            back_to_all_inquiries: Tillbaka till alla Förfrågningar
+            back_to_all_inquiries: Tillbaka till alla förfrågningar
             spam: Skräppost
             spam_yes: 'ja'
-            inquiry: Förfrågning
+            inquiry: Förfrågan
             to: Till
             from: Från
             click_to_email: Klicka för att skicka e-post till den här adressen
