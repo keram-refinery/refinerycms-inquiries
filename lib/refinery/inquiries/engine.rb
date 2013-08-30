@@ -8,7 +8,7 @@ module Refinery
       initializer 'init plugin' do
         Refinery::Plugin.register do |plugin|
           plugin.pathname = root
-          plugin.name = 'refinery_inquiries'
+          plugin.name = 'inquiries'
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.admin_inquiries_inquiries_path }
           plugin.activity = {
             :class_name => :'refinery/inquiries/inquiry',

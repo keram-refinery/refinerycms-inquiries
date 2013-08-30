@@ -3,7 +3,7 @@ require "spec_helper"
 module Refinery
   module Inquiries
 
-    plugin = Refinery::Plugins['refinery_inquiries']
+    plugin = Refinery::Plugins['inquiries']
 
     describe "inquiries" do
       before(:each) do

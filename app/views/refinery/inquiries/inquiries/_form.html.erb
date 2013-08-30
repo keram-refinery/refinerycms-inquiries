@@ -31,8 +31,8 @@
                 placeholder: (t('message', scope: 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
   </div>
   <% privacy_policy_page = if Refinery::Inquiries.show_contact_privacy_link &&
-                                Refinery::Plugins['refinery_inquiries'].privacy_policy_page.present?
-                              Refinery::Plugins['refinery_inquiries'].privacy_policy_page
+                                Refinery::Plugins['inquiries'].privacy_policy_page.present?
+                              Refinery::Plugins['inquiries'].privacy_policy_page
                             end -%>
   <div class="actions">
     <%= hidden_field_tag :form_holder_id, @form_holder_config[:id] if @form_holder_config.present? %>

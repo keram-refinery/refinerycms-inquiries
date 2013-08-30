@@ -1,4 +1,4 @@
-plugin = Refinery::Plugins['refinery_inquiries']
+plugin = Refinery::Plugins['inquiries']
 
 ::Refinery::User.all.each do |user|
   if user.plugins.where(name: plugin.name).blank?

@@ -37,14 +37,14 @@ module Refinery
       protected
 
       def find_page(fallback_to_404 = true)
-        @page ||= Refinery::Page.with_globalize.find_by_plugin_page_id 'refinery_inquiries'
+        @page ||= Refinery::Page.with_globalize.find_by_plugin_page_id 'inquiries'
         @page || (error_404 if fallback_to_404)
       end
 
       alias_method :page, :find_page
 
       def thank_you_page
-        @thank_you_page ||= Refinery::Page.with_globalize.find_by_plugin_page_id 'refinery_inquiries_thank_you'
+        @thank_you_page ||= Refinery::Page.with_globalize.find_by_plugin_page_id 'inquiries_thank_you'
       end
 
       def redirect_unless_path_match

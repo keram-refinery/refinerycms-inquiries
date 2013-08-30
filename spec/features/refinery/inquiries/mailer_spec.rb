@@ -9,7 +9,7 @@ module Refinery
 
         clear_emails
 
-        plugin = Refinery::Plugins['refinery_inquiries']
+        plugin = Refinery::Plugins['inquiries']
         visit plugin.page.nested_path
 
         fill_in "Name", :with => "Ugis Ozols"

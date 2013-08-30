@@ -1,7 +1,7 @@
 nb:
   refinery:
     plugins:
-      refinery_inquiries:
+      inquiries:
         title: Forespørsler
         description: Legger til et kontaktskjema og lagrer forespørsler
     inquiries:

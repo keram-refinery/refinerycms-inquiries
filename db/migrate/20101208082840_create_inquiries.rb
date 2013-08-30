@@ -14,10 +14,10 @@ class CreateInquiries < ActiveRecord::Migration
   end
 
   def down
-     drop_table ::Refinery::Inquiries::Inquiry.table_name
+    drop_table ::Refinery::Inquiries::Inquiry.table_name
 
-     ::Refinery::Page.delete_all({
-       plugin_page_id: ('refinery_inquiries' || 'refinery_inquiries_thank_you')
-     }) if defined?(::Refinery::Page)
+    ::Refinery::Page.delete_all({
+      plugin_page_id: ('inquiries' || 'inquiries_thank_you')
+    }) if defined?(::Refinery::Page)
   end
 end

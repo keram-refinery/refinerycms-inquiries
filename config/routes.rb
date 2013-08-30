@@ -1,4 +1,4 @@
-plugin = Refinery::Plugins['refinery_inquiries']
+plugin = Refinery::Plugins['inquiries']
 if plugin
   if plugin.page.present?
     plugin.page.reload

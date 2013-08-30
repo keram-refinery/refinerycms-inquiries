@@ -1,7 +1,7 @@
 pl:
   refinery:
     plugins:
-      refinery_inquiries:
+      inquiries:
         title: Zapytania
         description: Zapewnia formularz kontaktowy i przechowuje zapytania
         article: neutral

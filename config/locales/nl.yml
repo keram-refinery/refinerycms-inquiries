@@ -1,7 +1,7 @@
 nl:
   refinery:
     plugins:
-      refinery_inquiries:
+      inquiries:
         title: Contactaanvragen
         description: Contactformulier en beheer van vragen
     inquiries:
