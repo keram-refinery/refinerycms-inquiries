@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', '~> 3.0.0.dev', github: 'keram-refinery/refinerycms', branch: 'refinery_light', group: :test
-gem 'refinerycms-settings', '~> 3.0.0.dev', github: 'keram-refinery/refinerycms-settings', branch: 'refinery_light'
-gem 'refinerycms-i18n', '~> 3.0.0.dev', github: 'keram-refinery/refinerycms-i18n', branch: 'refinery_light'
-gem 'refinerycms-testing', '~> 3.0.0.dev', group: :test
+gem 'refinerycms', '~> 2.718.0.dev', github: 'keram-refinery/refinerycms', branch: 'refinery_light', group: :test
+gem 'refinerycms-settings', '~> 2.718.0.dev', github: 'keram-refinery/refinerycms-settings', branch: 'refinery_light'
+gem 'refinerycms-i18n', '~> 2.718.0.dev', github: 'keram-refinery/refinerycms-i18n', branch: 'refinery_light'
+gem 'refinerycms-testing', '~> 2.718.0.dev', group: :test
 
 group :development, :test do
   gem 'guard-rspec', '~> 3.0.2'
