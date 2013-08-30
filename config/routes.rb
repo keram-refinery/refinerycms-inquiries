@@ -1,6 +1,8 @@
 plugin = Refinery::Plugins['refinery_inquiries']
 if plugin
   if plugin.page.present?
+    plugin.page.reload
+
     Refinery::Core::Engine.routes.draw do
       namespace :inquiries, :path => '' do
         if Refinery::Pages.marketable_urls
