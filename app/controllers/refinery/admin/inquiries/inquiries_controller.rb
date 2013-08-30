@@ -8,8 +8,6 @@ module Refinery
         crudify :'refinery/inquiries/inquiry',
                 title_attribute: 'email'
 
-        helper_method :group_by_date
-
         before_action :find_all_in_index, only: [:index]
         before_action :find_all_in_archived, only: [:archived]
         before_action :find_all_in_spam, only: [:spam]
@@ -49,7 +47,7 @@ module Refinery
         end
 
         def paginate_inquiries
-          @inquiries = @inquiries.page(params[:page])
+          @inquiries = @inquiries.page(paginate_page)
         end
 
       end

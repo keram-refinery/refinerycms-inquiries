@@ -1,9 +1,10 @@
 module Refinery
   module Inquiries
-    class InquiriesController < ::ApplicationController
+    class InquiriesController < ::Refinery::PagesController
+      helper Refinery::Core::Engine.helpers
 
       before_action :find_page
-      before_action :redirect_unless_path_match, :only => [:new]
+      before_action :redirect_unless_path_match, only: [:new]
 
       def new
         @inquiry = ::Refinery::Inquiries::Inquiry.new
@@ -27,7 +28,7 @@ module Refinery
             end if ::Refinery::Inquiries::Setting.send_confirmation?
           end
 
-          redirect_to refinery.url_for((thank_you_page || page).url)
+          redirect_to refinery.url_for((thank_you_page || page).url), status: :see_other
         else
           render :new
         end
@@ -48,30 +49,6 @@ module Refinery
 
       def redirect_unless_path_match
         redirect_to refinery.url_for(page.url) and return unless request.fullpath.match(page.nested_path)
-      end
-
-      def new_respond status=:ok
-        @form_holder_config = {
-            :id => 'inquiry-form-holder',
-            :class => 'inquiries',
-            :append_to => '#body .inner'
-        }
-
-        respond_to do |format|
-          if params[:form_holder_id].present? && params[:form_holder_id] =~ /\A[a-zA-Z]+[\w\-]{,32}\z/
-            @form_holder_config[:id] = params[:form_holder_id]
-          end
-
-          format.html do
-            render action: 'new'
-          end
-
-          format.json do
-            json_response status, {
-              :errors => @inquiry.errors,
-              :html => { @form_holder_config[:id] => render_html_to_json_string('form') }}
-          end
-        end
       end
 
       def inquiry_params

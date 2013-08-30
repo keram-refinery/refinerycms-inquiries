@@ -12,6 +12,7 @@ en:
       inquiries:
         form:
           send: Send message
+          sending_please_wait: Sending, please wait..
           privacy_policy: We value your privacy
       inquiry_mailer:
         notification:

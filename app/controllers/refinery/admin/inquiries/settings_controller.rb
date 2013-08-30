@@ -5,11 +5,11 @@ module Refinery
 
         helper Refinery::Admin::SettingsHelper
 
-        before_action :find_setting, :restrict_access, :only => [:edit, :update]
+        before_action :find_setting, :restrict_access, only: [:edit, :update]
 
         def update
           if @setting.update(setting_params)
-            flash[:notice] = t('refinery.crudify.updated', :kind => 'Setting', :what => @setting.name.titleize)
+            flash[:notice] = t('refinery.crudify.updated', kind: 'Setting', what: @setting.name.titleize)
 
             redirect_back_or_default(refinery.admin_inquiries_inquiries_path)
           else
@@ -21,15 +21,15 @@ module Refinery
           if params.keys.include?('subject') && params.keys.include?('body')
             save_subject_for_confirmation
             save_message_for_confirmation
-            flash[:notice] = t('refinery.crudify.updated', :kind => 'Inquiry', :what => 'confirmation email')
+            flash[:notice] = t('refinery.crudify.updated', kind: 'Inquiry', what: 'confirmation email')
           end
         end
 
       protected
 
         def find_setting
-          @setting = Refinery::Setting.find_by(:slug => params[:id], :scoping => 'inquiries') if params[:id].friendly_id?
-          @setting = Refinery::Setting.find_by(:id => params[:id]) unless @setting || params[:id].friendly_id?
+          @setting = Refinery::Setting.find_by(slug: params[:id], scoping: 'inquiries') if params[:id].friendly_id?
+          @setting = Refinery::Setting.find_by(id: params[:id]) unless @setting || params[:id].friendly_id?
 
           @setting || error_404
         end

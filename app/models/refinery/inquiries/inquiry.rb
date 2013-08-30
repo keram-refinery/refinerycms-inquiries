@@ -9,15 +9,15 @@ module Refinery
       scope :fresh, -> { where(archived: false) }
       scope :archived, -> { where(archived: true) }
 
-      filters_spam :message_field => :message,
-                   :email_field => :email,
-                   :author_field => :name,
-                   :other_fields => [:phone],
-                   :extra_spam_words => %w()
+      filters_spam message_field: :message,
+                   email_field: :email,
+                   author_field: :name,
+                   other_fields: [:phone],
+                   extra_spam_words: %w()
 
-      validates :name, :presence => true
-      validates :email, :format=> { :with =>  /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-      validates :message, :presence => true
+      validates :name, presence: true
+      validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+      validates :message, presence: true
 
       def self.latest(number = 7, include_spam = false)
         include_spam ? limit(number) : ham.limit(number)
