@@ -45,7 +45,7 @@ module Refinery
               page.should have_content("Update who gets notified")
               page.should have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_notification_recipients/edit']")
               page.should have_content("Edit confirmation email")
-              page.should have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/inquiry_confirmation_body/edit']")
+              page.should have_selector("a[href*='/#{Refinery::Core.backend_route}/inquiries/settings/confirmation_email']")
             end
           end
         end
@@ -62,7 +62,9 @@ module Refinery
           it "shows inquiry details" do
             visit refinery.admin_inquiries_inquiries_path
 
-            click_link "Read the inquiry"
+            within "#inquiry_#{inquiry.id}" do
+              click_link "Read the inquiry"
+            end
 
             page.should have_content("From David Jones [dave@refinerycms.com]")
             page.should have_content("Hello, I really like your website. Was it hard to build and maintain or could anyone do it?")
@@ -80,12 +82,21 @@ module Refinery
         end
 
         describe "destroy" do
+          before do
+            Refinery::Inquiries::Inquiry.where('id != ?', inquiry.id).destroy_all
+          end
+
           it "removes inquiry" do
             visit refinery.admin_inquiries_inquiries_path
 
-            click_link "Remove this inquiry forever"
+            within "#inquiry_#{inquiry.id}" do
+              click_link "Remove this inquiry forever"
+            end
 
-            page.should_not have_content(inquiry.name)
+            within "#content" do
+              page.should_not have_content(inquiry.name)
+            end
+
             Refinery::Inquiries::Inquiry.count.should == 0
           end
         end
@@ -94,7 +105,10 @@ module Refinery
           it "moves inquiry to spam" do
             visit refinery.admin_inquiries_inquiries_path
 
-            click_link "Mark as spam"
+
+            within "#inquiry_#{inquiry.id}" do
+              click_link "Mark as spam"
+            end
 
             within "#actions" do
               page.should have_content("Spam (1)")

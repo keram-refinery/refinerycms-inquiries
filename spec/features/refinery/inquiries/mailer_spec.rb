@@ -9,7 +9,8 @@ module Refinery
 
         clear_emails
 
-        visit "/contact"
+        plugin = Refinery::Plugins['refinery_inquiries']
+        visit plugin.page.nested_path
 
         fill_in "Name", :with => "Ugis Ozols"
         fill_in "Email", :with => "ugis.ozols@refinerycms.com"
@@ -17,9 +18,8 @@ module Refinery
         click_button "Send message"
       end
 
-      it "sends confirmation email", :js do
+      it "sends confirmation email" do
         open_email("ugis.ozols@refinerycms.com")
-        p current_email
 
         current_email.from.should eq("Ugis Ozols [#{Refinery::Core.site_name}] <#{Refinery::Inquiries.from_name}@example.com>")
         current_email.to.should eq(["ugis.ozols@refinerycms.com"])
@@ -33,7 +33,7 @@ module Refinery
         current_email.from.should eq("Ugis Ozols [#{Refinery::Core.site_name}] <#{Refinery::Inquiries.from_name}@example.com>")
         current_email.to.should eq(["rspec@refinerycms.com"])
         current_email.subject.should eq("New inquiry from your website")
-        current_email.body.should eq("Hi there,\n\nYou just received a new inquiry on your website.\n\n--- inquiry starts ---\n\nFrom: Ugis Ozols\nEmail: ugis.ozols@refinerycms.com\nPhone: \nMessage:\nHey, I'm testing!\n\n--- inquiry ends ---\n\nKind Regards,\nCompany Name\n\nP.S. All your inquiries are stored in the \"Inquiries\" section of Refinery should you ever want to view it later there.")
+        current_email.body.should eq("Hi there,\n\nYou just received a new inquiry on your website.\n\n--- inquiry starts ---\n\nFrom: Ugis Ozols\nEmail: ugis.ozols@refinerycms.com\nPhone: \nMessage:\nHey, I'm testing!\n\n--- inquiry ends ---\n\nKind Regards,\nSite Name\n\nP.S. All your inquiries are stored in the \"Inquiries\" section of Refinery should you ever want to view it later there.")
       end
     end
   end
