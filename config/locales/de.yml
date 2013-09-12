@@ -54,6 +54,7 @@ de:
             phone: Telefon
             date: Datum
             message: Nachricht
+        latest_inquiries: Letzte Anfragen
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Schicke Benachrichtigungen an

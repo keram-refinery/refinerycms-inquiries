@@ -54,6 +54,7 @@ nl:
             phone: Telefoonnummer
             date: Datum
             message: Bericht
+        latest_inquiries: Laatste contactaanvragen
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Stuur notificaties naar

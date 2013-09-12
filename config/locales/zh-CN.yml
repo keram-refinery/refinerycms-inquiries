@@ -54,6 +54,7 @@ zh-CN:
             phone: 电话
             date: 日期
             message: 信息
+        latest_inquiries: 近期的来询
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: 发送通知到

@@ -54,6 +54,7 @@ lt:
             phone: Telefonas
             date: Data
             message: Žinutė
+        latest_inquiries: Naujausios Užklausos
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Siųsti pranešimus į

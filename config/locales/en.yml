@@ -60,6 +60,7 @@ en:
             phone: Phone
             date: Date
             message: Message
+        latest_inquiries: Latest Inquiries
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Send notifications to

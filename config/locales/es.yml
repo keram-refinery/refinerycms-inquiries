@@ -56,6 +56,7 @@ es:
             phone: Teléfono
             date: Fecha
             message: Mensaje
+        latest_inquiries: Últimas Solicitudes
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Mandar notificaciones a

@@ -54,6 +54,7 @@ pt-BR:
             phone: Telefone
             date: Data
             message: Mensagem
+        latest_inquiries: Últimas Mensagens
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Enviar notificações para

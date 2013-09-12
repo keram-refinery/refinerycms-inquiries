@@ -54,6 +54,7 @@ nb:
             phone: Telefon
             date: Dato
             message: Melding
+        latest_inquiries: Siste Forespørsler
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Send varslinger til

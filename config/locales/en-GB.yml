@@ -54,6 +54,7 @@ en-GB:
             phone: Phone
             date: Date
             message: Message
+        latest_inquiries: Latest Enquiries
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Send notifications to

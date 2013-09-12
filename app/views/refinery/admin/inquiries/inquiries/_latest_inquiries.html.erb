@@ -1,0 +1,18 @@
+<% if ::Refinery::Plugins.active.names.include?('inquiries') %>
+<% latest_inquiries = Refinery::Inquiries::Inquiry.latest(Refinery::Dashboard.activity_show_limit) %>
+<div id="latest-inquiries">
+  <h2><%= t('latest_inquiries', scope: 'refinery.admin.inquiries') %></h2>
+  <ul class="records">
+    <% latest_inquiries.each do |inquiry| %>
+      <li>
+        <div class="detail">
+          <span class="title">
+            <%= link_to inquiry.name, refinery.admin_inquiries_inquiry_path(inquiry) %> <%= t('.said') %>
+          </span>
+          <span class="preview"><%= truncate(strip_tags(sanitize(inquiry.message)), length: 100) -%></span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<% end -%>

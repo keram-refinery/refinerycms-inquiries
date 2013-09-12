@@ -54,6 +54,7 @@ ru:
             phone: Телефон
             date: Дата
             message: Сообщение
+        latest_inquiries: Последние запросы
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Отправлять уведомления

@@ -54,6 +54,7 @@ sl:
             phone: Telefon
             date: Datum
             message: Sporočilo
+        latest_inquiries: Latest Inquiries
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Pošlji obvestilo na

@@ -54,6 +54,7 @@ fr:
             phone: Téléphone
             date: Date
             message: Message
+        latest_inquiries: Dernières Requêtes
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Envoyer une notification à

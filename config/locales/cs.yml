@@ -54,6 +54,7 @@ cs:
             phone: Telefon
             date: Datum
             message: Zpráva
+        latest_inquiries: Nejnovější dotazy z webu
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Odeslat notifikaci pro

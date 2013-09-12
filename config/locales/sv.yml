@@ -54,6 +54,7 @@ sv:
             phone: Telefon
             date: Datum
             message: Meddelande
+        latest_inquiries: Senaste Utredningarna
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Skicka notifikationer till

@@ -55,6 +55,7 @@ pl:
             phone: Telefon
             date: Data
             message: Wiadomość
+        latest_inquiries: Najnowsze Zapytania
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Wysyłaj powiadomienia do

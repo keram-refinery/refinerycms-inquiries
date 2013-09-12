@@ -40,6 +40,7 @@ da:
           actions:
             update_notified: Opdatér, hvem der får besked
             edit_confirmation_email: Redigér e-mailbekræftelse
+        latest_inquiries: Seneste Henvendelser
         settings:
           update:
             updated: "'%{setting}' er opdateret."

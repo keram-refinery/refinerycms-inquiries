@@ -54,6 +54,7 @@ lv:
             phone: Tālrunis
             date: Datums
             message: Ziņa
+        latest_inquiries: Jaunākie Pieprasījumi
         settings:
           notification_recipients_form:
             inquiry_settings_value_name: Sūtīt paziņojumu uz

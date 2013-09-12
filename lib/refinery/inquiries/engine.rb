@@ -18,6 +18,8 @@ module Refinery
           }
 
         end
+
+        Refinery::Dashboard.records_templates << '/refinery/admin/inquiries/inquiries/latest_inquiries'
       end
 
       initializer 'refinery.pages append marketable routes', :after => :set_routes_reloader_hook do
